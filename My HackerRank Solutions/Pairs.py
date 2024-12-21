@@ -54,14 +54,14 @@ There are 3 pairs of integers in the set with a difference of 2: [5,3], [4,2] an
 
 def pairs(k, arr):
     # Write your code here
+    setarr = set(arr)
     pairs = 0
-    for i in range(len(arr)-1):
-        for j in range(i+1, len(arr)):
-            #print(i, j, arr[i], arr[j])
-            if abs(arr[i] - arr[j]) == k:
-                pairs += 1
-    return pairs
 
+    for itm in setarr:
+        if itm + k in setarr:
+            pairs += 1
+
+    return pairs
 
 if __name__ == '__main__':
 
